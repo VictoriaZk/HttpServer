@@ -31,7 +31,7 @@ public class HttpServer {
         public void run() {
             try {
                 readInputHeaders();
-                writeResponse("<html><body><h1>Hello</h1></body></html>");
+                writeResponse("");
             } catch (Throwable t) {
                 /*do nothing*/
             } finally {
