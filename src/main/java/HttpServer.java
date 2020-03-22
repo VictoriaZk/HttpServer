@@ -31,7 +31,7 @@ public class HttpServer {
         public void run() {
             try {
                 readInputHeaders();
-                writeResponse("<html><body><h1>Hello</h1></body></html>");
+                writeResponse("");
             } catch (Throwable t) {
                 /*do nothing*/
             } finally {
@@ -45,9 +45,9 @@ public class HttpServer {
         }
 
         private void writeResponse(String s) throws Throwable {
-            String response = "HTTP/1.0 200 OK\r\n" +
-                    "Server:  \r\n" +
-                    "Content-Type:\r\n" +
+            String response = "HTTP/1.1 200 OK\r\n" +
+                    "Server: YarServer/2009-09-09\r\n" +
+                    "Content-Type: text/html\r\n" +
                     "Content-Length: " + s.length() + "\r\n" +
                     "Connection: close\r\n\r\n";
             String result = response + s;
